@@ -15,7 +15,7 @@ import os
 from datetime import timedelta
 
 try:
-    from dotenv import load_dotenv
+    from dotenv import load_dotenv  # pyright: ignore[reportMissingImports]
     load_dotenv()
 except Exception:
     pass
@@ -182,8 +182,8 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = os.getenv('MAIL_FROM', 'no-reply@example.com')
 
 # Third-party API keys
-TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID', '')
-TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN', '')
-TWILIO_FROM_NUMBER = os.getenv('TWILIO_FROM_NUMBER', '')
+TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID', 'VA0ba843dafce259d9080c1b4888c0d064')
+TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN', '462b5cccf83d8f21194ddb0c1b005ad0')
+TWILIO_FROM_NUMBER = os.getenv('TWILIO_FROM_NUMBER', '+1 978 971 0673')
 
-STRIPE_API_KEY = os.getenv('STRIPE_API_KEY', '')
+STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')

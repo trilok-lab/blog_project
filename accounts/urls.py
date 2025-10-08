@@ -1,5 +1,5 @@
 from django.urls import path
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView  # pyright: ignore[reportMissingImports]
 from .views import RegisterView, verify_mobile, send_otp, verify_otp, stripe_create_intent, stripe_confirm_payment
 
 
