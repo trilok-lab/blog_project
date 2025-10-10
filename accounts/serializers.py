@@ -24,7 +24,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User(username=validated_data['username'], email=validated_data.get('email'))
         user.mobile_no = validated_data.get('mobile_no')
         user.set_password(validated_data['password'])
-        user.is_active = True
+        # Keep user inactive until mobile verification completes
+        user.is_active = False
         user.save()
         return user
 

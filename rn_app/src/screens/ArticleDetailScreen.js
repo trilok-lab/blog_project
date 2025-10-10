@@ -16,8 +16,7 @@ export default function ArticleDetailScreen({ route }) {
   const load = async () => {
     setLoading(true);
     try {
-      const { data } = await client.get(`/articles/items/?search=${slug}`);
-      const found = data.results?.find((x) => x.slug === slug);
+      const { data: found } = await client.get(`/articles/items/${slug}/`);
       if (found) setItem(found);
       const { data: comm } = await client.get(`/comments/?article=${found?.id}`);
       setComments(comm);
